@@ -1,5 +1,10 @@
 # MiniApp History
 
+## Install
+```bash
+$ npm install miniapp-history --save
+```
+
 ## Usage
 ```js
 import { createMiniAppHistory } from 'miniapp-history';
