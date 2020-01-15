@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node ./scripts/compile-packages.js --watch",
     "build": "node ./scripts/compile-packages.js",
-    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./packages/*/src --fix",
+    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src --fix",
     "test": "jest --logHeapUsage --detectOpenHandles"
   },
   "repository": {
