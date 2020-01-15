@@ -27,6 +27,12 @@ module.exports = {
     }
   },
   'globals': {
+    'App': true,
+    'Page': true,
+    'getApp': true,
+    'Component': true,
+    'my': true,
+    'wx': true,
     'jasmine': true
   },
   'rules': {
@@ -138,6 +144,21 @@ module.exports = {
      */
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        'peerDependencies': true,
+        'devDependencies': [
+          '**/scripts/**/*.js',
+          '**/__tests__/*.js',
+          '**/__tests__/**/*.js',
+          '**/*.config.js',
+          '**/config/*.js',
+          '**/*.conf.js',
+          '**/tests/*.test.js'
+        ]
+      }
+    ],
 
     /**
      * React & JSX
