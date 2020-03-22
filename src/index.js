@@ -6,4 +6,3 @@ export function createMiniAppHistory(routes) {
   if (history) return history;
   return history = new MiniAppHistory(routes);
 }
-

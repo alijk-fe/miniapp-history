@@ -8,6 +8,10 @@ export default class Location {
     this._currentPageOptions = pageOptions;
   }
 
+  __updatePageId(pageId) {
+    this._pageId = pageId;
+  }
+
   get href() {
     return this.pathname + this.search;
   }
