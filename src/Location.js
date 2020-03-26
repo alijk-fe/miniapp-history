@@ -1,3 +1,4 @@
+import { isQuickApp } from 'universal-env';
 export default class Location {
   constructor() {
     this._currentPageOptions = {};
@@ -27,11 +28,17 @@ export default class Location {
   }
 
   get pathname() {
-    // eslint-disable-next-line no-undef
-    const pages = getCurrentPages();
-    if (pages.length === 0) return '';
-    const currentPage = pages[pages.length - 1];
-    return addLeadingSlash(currentPage.route);
+    if (isQuickApp) {
+      const router = require('@system.router');
+      const path = router.getState().path;
+      return addLeadingSlash(path);
+    } else {
+      // eslint-disable-next-line no-undef
+      const pages = getCurrentPages();
+      if (pages.length === 0) return '';
+      const currentPage = pages[pages.length - 1];
+      return addLeadingSlash(currentPage.route);
+    }
   }
 }
 

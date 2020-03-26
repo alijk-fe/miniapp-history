@@ -1,3 +1,4 @@
+import { isQuickApp } from 'universal-env';
 import generateActions, { __updateRouterMap } from './router';
 import Location from './Location';
 import { addListener } from './listeners';
@@ -11,8 +12,13 @@ export default class MiniAppHistory {
   }
 
   get length() {
-    // eslint-disable-next-line no-undef
-    return getCurrentPages().length;
+    if (isQuickApp) {
+      const router = require('@system.router');
+      return router.getLength();
+    } else {
+      // eslint-disable-next-line no-undef
+      return getCurrentPages().length;
+    }
   }
 
   listen(callback) {
