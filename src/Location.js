@@ -1,4 +1,5 @@
 import { isQuickApp } from 'universal-env';
+
 export default class Location {
   constructor() {
     this._currentPageOptions = {};
